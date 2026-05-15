@@ -1,12 +1,12 @@
-<script lang="ts">
-	import favicon from '$lib/assets/favicon.svg';
+<script>
+	// Mengimpor Pico CSS
+	import '@picocss/pico/css/pico.min.css';
 
+	// Di Svelte 5, konten halaman (children) diterima sebagai kontainer/props
 	let { children } = $props();
 </script>
 
-<svelte:head>
-	<link rel="icon" href={favicon} />
-</svelte:head>
-
-{@render children()}
-
+<!-- Membungkus halaman dengan container Pico CSS -->
+<main class="container">
+	{@render children()}
+</main>
