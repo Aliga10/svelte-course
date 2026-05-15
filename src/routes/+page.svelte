@@ -12,5 +12,4 @@ import GlobalCounter from '../lib/components/GlobalCounter.svelte';
 <GlobalCounter/>
 <GlobalCounter/>
 <GlobalCounter/>
-<GlobalCounter/>
-<GlobalCounter/>
+
