@@ -12,4 +12,6 @@ import GlobalCounter from '../lib/components/GlobalCounter.svelte';
 <GlobalCounter/>
 <GlobalCounter/>
 <GlobalCounter/>
+<br/>
+<p><about-link href="/about">Go to About Page</about-link></p>
 
