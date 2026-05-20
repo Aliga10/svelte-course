@@ -23,6 +23,11 @@ const config = {
 		}),
 				paths: {
 			base: process.argv.includes('dev') ? '/svelte-course' : process.env.BASE_PATH
+		},
+		prerender: {
+			// This can be used to specify which pages should be prerendered (i.e. generated as static HTML)
+			// entries: ['*', '!/dynamic']
+			handleUnseenRoutes: 'ignore'
 		}
 		
 	}

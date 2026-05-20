@@ -1,6 +1,6 @@
 <script>
 import { resolve } from "$app/paths";
-import {base} from '$app/paths';
+// import {base} from '$app/paths';
 
     // Di Svelte 5, gunakan $state agar data reaktif
     let products = $state([
@@ -27,7 +27,7 @@ import {base} from '$app/paths';
         <!-- Gunakan tanda backtick ` untuk membuat URL dinamis -->
         <!-- <a href={resolve(`/product/${product.id}`)}>{product.name}</a> -->
 
-        <a href={resolve(`/product/${product.id}`)}>{product.name}</a>
+        <!-- <a href={resolve(`/product/${product.id}`)}>{product.name}</a> -->
     </article>
    {/each}
 </div>
