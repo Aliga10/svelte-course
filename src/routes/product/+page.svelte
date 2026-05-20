@@ -1,6 +1,5 @@
 <script>
-import { resolve } from "$app/paths";
-// import {base} from '$app/paths';
+    import { base } from '$app/paths'; // Mengambil base path untuk GitHub Pages
 
     // Di Svelte 5, gunakan $state agar data reaktif
     let products = $state([
@@ -15,19 +14,16 @@ import { resolve } from "$app/paths";
         { id: 9, name: 'product 9' },
         { id: 10, name: 'product 10' }
     ]);
-
 </script>
 
 <h1>Product</h1>
 
-
 <div class="flex flex-col gap-2">
-   {#each products as product (product.id)}
-    <article>
-        <!-- Gunakan tanda backtick ` untuk membuat URL dinamis -->
-        <a href={resolve(`/product/${product.id}`)}>{product.name}</a>
-
-        <!-- <a href={resolve(`/product/${product.id}`)}>{product.name}</a> -->
-    </article>
-   {/each}
+    {#each products as product (product.id)}
+        <article>
+            <a href={base + '/product/' + product.id}>
+                {product.name}
+            </a>
+        </article>
+    {/each}
 </div>
