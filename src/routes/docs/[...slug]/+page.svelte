@@ -15,6 +15,6 @@
 
 {#if slugArr.length === 1}
     <p>viewing docs feature of <strong>{slugArr[0]}</strong></p>
-{:else if slugArr.length === 2}
-    <p>viewing docs feature of <strong>{slugArr[0]}</strong> and concept <strong>{slugArr[1]}</strong></p>
+{:else if slugArr.length >= 2}
+    <p>viewing docs feature of <strong>{slugArr[0]}</strong> and concept of <strong>{slugArr[1]}</strong></p>
 {/if}
