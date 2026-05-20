@@ -25,7 +25,7 @@ import { resolve } from "$app/paths";
    {#each products as product (product.id)}
     <article>
         <!-- Gunakan tanda backtick ` untuk membuat URL dinamis -->
-        <!-- <a href={resolve(`/product/${product.id}`)}>{product.name}</a> -->
+        <a href={resolve(`/product/${product.id}`)}>{product.name}</a>
 
         <!-- <a href={resolve(`/product/${product.id}`)}>{product.name}</a> -->
     </article>
