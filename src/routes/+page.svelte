@@ -1,35 +1,47 @@
 <script lang="ts">
-  import { base } from '$app/paths';
+  import { goto, beforeNavigate, afterNavigate,} from '$app/navigation';
+  import{resolve} from '$app/paths';
+  // Mengimpor komponen
   import SayHello from '$lib/components/SayHello.svelte';
-  import Counter from '../lib/components/Counter.svelte';
-  import GlobalCounter from '../lib/components/GlobalCounter.svelte';
-  import{goto , beforeNavigate,afterNavigate} from '$app/navigation';
+  import Counter from '$lib/components/Counter.svelte'; // Disarankan pakai alias $lib
+  import GlobalCounter from '$lib/components/GlobalCounter.svelte';
+
+  // Efek Svelte 5 untuk menjalankan navigasi saat komponen dimuat (jika memang diperlukan)
+  $effect(() => {
+    // Jalankan navigasi atau state di sini jika perlu, 
+    // tapi hati-hati agar tidak terjadi infinite loop saat halaman baru terbuka!
+    // goto(`${base}/foo`); 
+  });
   
   function clickHandler() {
-    goto(`${base}/product`);
+    goto (resolve('/'))
   }
 
   beforeNavigate((navigation) => {
-    console.log({before : navigation});
+    console.log({ before: navigation });
   });
+
   afterNavigate((navigation) => {
-    console.log({after : navigation});
+    console.log({ after: navigation });
   });
 </script>
+
 <h1>hello</h1>
-<a href={` ${base}/blog `}>blog1</a>
-<a href={`${base}/product`}>product</a>
-<a href={`${base}/about`}>Go to About Page</a>
 
+<div class="nav-links">
+  <a href={resolve('/blog')}>blog1</a>
+  <a href={resolve('/product')}>product</a>
+  <a href={resolve('/about')}>Go to About Page</a>
+</div>
 
+<Counter />  
+<SayHello />
+<GlobalCounter />
+<GlobalCounter />
+<GlobalCounter />
+<GlobalCounter />
 
-<Counter/>	
-<SayHello/>
-<GlobalCounter/>
-<GlobalCounter/>
-<GlobalCounter/>
-<GlobalCounter/>
-<br/>
+<br />
 <button onclick={clickHandler}>order</button>
 
 <style>
@@ -48,4 +60,7 @@
   button:hover {
     background-color: #0056b3;
   }
-</style>  
+  .nav-links {
+    margin-bottom: 15px;
+  }
+</style>
