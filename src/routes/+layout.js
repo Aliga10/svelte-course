@@ -3,3 +3,5 @@
 // avoid large performance and SEO impacts
 export const prerender = true;
 export const trailingSlash = 'always';
+/** @type {import('@sveltejs/kit').HandleUnseenRoutes} */
+export const handleUnseenRoutes = 'ignore'; // Tambahkan baris ini!
