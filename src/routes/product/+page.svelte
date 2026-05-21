@@ -21,7 +21,7 @@
 <div class="flex flex-col gap-2">
     {#each products as product (product.id)}
         <article>
-            <a href={base + '/product/' + product.id}>
+            <a href="{base + '/product/' + product.id}">
                 {product.name}
             </a>
         </article>
