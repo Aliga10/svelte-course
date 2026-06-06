@@ -30,12 +30,15 @@
 
 <div class="nav-links">
   <a href={resolve('/blog')}>blog1</a>
+  <a href={resolve('/task')}>task</a>
   <a href={resolve('/product')}>product</a>
   <a href={resolve('/about')}>Go to About Page</a>
 </div>
 
 <Counter />  
 <SayHello />
+<div>
+</div>
 <GlobalCounter />
 <GlobalCounter />
 <GlobalCounter />
